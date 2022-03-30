@@ -13,3 +13,14 @@ This [here](https://openbase.com/categories/js/best-nodejs-assertion-libraries) 
 ## Site Considerations
 
 Me thinks it is best to reach out to seek.com and use that credential set already existing to make api calls etc and see how i go throwing around web tokens and what not as part of headers or query selectors.
+
+## Problems with Fetch
+
+This is a dogs breakfast of a request. Genuinely surprised at how lacking the documentation is on the isomporphic fetch github repo. Had to eventually work out where to find it via a youtube video and reference the original fetch source. Insanity.
+The response also sucks compared to axios, like seriously who would use this crap? 
+
+Won't give up on this just yet till I've played around and given it a chance at least. If only it would return sensible information and headers.
+
+[video](https://www.youtube.com/watch?v=tc8DU14qX6I)
+[proper fetch documentation - the original](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+

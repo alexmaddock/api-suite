@@ -31,13 +31,46 @@ let body = {"client_id":`${CLIENT_ID}`,
             "connection":"Candidate"
         };
 
-let jwt = () => {
+let jwts = () => {
+ console.log(header)
+ console.log(path)
  return fetch(`${url}/${path}`, {
      method: 'POST',
      header,
      body
      
  });
+}
+
+let awt = (path) => {
+    let outcome = fetch(`https://securepubads.g.doubleclick.net/pagead/ppub_config?ippd=stackoverflow.com`).then(function(response) {
+        if(response.status != 200) {
+            dispatch(setError(response.status + '===>' + response.statusText + '===>' + response.url));
+        }
+        return response;
+    })
+    return outcome;
+    outcome.then(function (data) {
+        console.log(data);
+    });
+
+}
+
+
+export const jwt = async () =>  {
+
+    let outcome = await fetch('https://securepubads.g.doubleclick.net/pagead/ppub_config?ippd=stackoverflow.com', {
+        method: 'GET'
+    })
+    
+    try {
+        return outcome.json()
+        .then((data) => {console.log(data)});
+    }
+    catch(e) {
+        throw e
+    }
+
 }
 
 let getToken = async() => {
