@@ -64,7 +64,7 @@ export const jwt = async () =>  {
     })
     
     try {
-        return outcome.headers/*json()
+        return outcome.body/*json()
         .then((data) => {console.log(data)});*/
     }
     catch(e) {

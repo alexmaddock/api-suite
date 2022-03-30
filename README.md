@@ -25,3 +25,47 @@ Won't give up on this just yet till I've played around and given it a chance at 
 [proper fetch documentation - the original](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 
 Good thing is the response can have `response.headers` and `response.status/statusText` which gives more detail. Sure it's cleaner than axios, but also somewhat cryptic with the insane structure of it. Maybe it will do...
+
+`response.body` can also be done. How I don't understand when the response structure is as such:
+
+```
+Response {
+  size: 0,
+  timeout: 0,
+  [Symbol(Body internals)]: {
+    body: Gunzip {
+      _writeState: [Uint32Array],
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 5,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: true,
+      bytesWritten: 0,
+      _handle: [Zlib],
+      _outBuffer: <Buffer 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 55 00 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 7e 7d 58 15 01 00 00 00 b8 5a ... 16334 more bytes>,
+      _outOffset: 0,
+      _chunkSize: 16384,
+      _defaultFlushFlag: 2,
+      _finishFlushFlag: 2,
+      _defaultFullFlushFlag: 3,
+      _info: undefined,
+      _maxOutputLength: 4294967295,
+      _level: -1,
+      _strategy: 0,
+      [Symbol(kCapture)]: false,
+      [Symbol(kTransformState)]: [Object],
+      [Symbol(kError)]: null
+    },
+    disturbed: false,
+    error: null
+  },
+  [Symbol(Response internals)]: {
+    url: 'https://securepubads.g.doubleclick.net/pagead/ppub_config?ippd=stackoverflow.com',
+    status: 200,
+    statusText: 'OK',
+    headers: Headers { [Symbol(map)]: [Object: null prototype] },
+    counter: 0
+  }
+}
+```
