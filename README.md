@@ -69,3 +69,5 @@ Response {
   }
 }
 ```
+
+Can also return `response.text()` and `response.blob() // image`.
