@@ -24,3 +24,4 @@ Won't give up on this just yet till I've played around and given it a chance at 
 [video](https://www.youtube.com/watch?v=tc8DU14qX6I)
 [proper fetch documentation - the original](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 
+Good thing is the response can have `response.headers` and `response.status/statusText` which gives more detail. Sure it's cleaner than axios, but also somewhat cryptic with the insane structure of it. Maybe it will do...
